@@ -1,0 +1,21 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             version="2.2">
+    <persistence-unit name="incomeExpensePU" transaction-type="JTA">
+        <!-- Specifica il provider JPA -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Definisci il DataSource -->
+        <jta-data-source>java:/PostgresDS</jta-data-source>
+
+        <!-- Configurazione delle entità -->
+        <class>model.IncomeExpense</class>
+
+        <properties>
+            <!-- Impostazioni Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

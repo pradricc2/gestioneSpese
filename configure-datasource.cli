@@ -1,0 +1,7 @@
+embed-server --std-out=echo --server-config=standalone.xml
+
+/subsystem=datasources/jdbc-driver=postgresql:add(driver-name="postgresql", driver-module-name="org.postgresql", driver-xa-datasource-class-name=org.postgresql.xa.PGXADataSource)
+
+data-source add --name=PostgresDS --driver-name=postgresql --jndi-name=java:/PostgresDS --connection-url=jdbc:postgresql://postgres_container:5432/gestione_spese --user-name=postgres --password=postgres --use-ccm=false --max-pool-size=25 --min-pool-size=5 --idle-timeout-minutes=5 --background-validation=false --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker --exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter
+
+stop-embedded-server
