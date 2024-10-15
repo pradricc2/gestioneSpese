@@ -12,3 +12,5 @@ L'applicazione implementa il backend, molto basico, di un POC il cui scopo è ut
 - src/main/resources: Contiene i file di configurazione.
 - src/test/java: Contiene i test unitari.
 - pom.xml: File di configurazione di Maven
+- Dockerfile: File per la creazione dell'immagine Docker.
+- configure-datasource.cli: File a supporto Dockerfile per la gestione del data source postgres
